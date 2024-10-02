@@ -1,5 +1,5 @@
 function greetings(name){
-    console.log("loidi",name,".");
+    console.log("cii yi bak",name,".");
 }
     greetings("riak");
 
