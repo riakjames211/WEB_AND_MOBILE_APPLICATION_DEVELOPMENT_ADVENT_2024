@@ -1,14 +1,19 @@
-// Function to calculate average daily water usage over a week
-function calculateWaterUsage(totalWeeklyWaterUsage) {
-    let daysInWeek = 7; // Number of days in a week
-    return totalWeeklyWaterUsage / daysInWeek; // Calculate and return average daily usage
-}
-
-// Total water usage for the week in liters
-let totalWaterUsageForWeek = 1500;
-
-// Calculate average daily water usage
-let averageDailyWaterUsage = calculateWaterUsage(totalWaterUsageForWeek);
-
-// Output the result
-console.log(`The average daily water usage for the household is ${averageDailyWaterUsage} liters.`);
+// Create the school object
+let school = {
+    name: "seeta high school",
+    location: "kampala, uganda",
+    studentsCount: 1300,
+    establishedYear: 2000,
+    schoolType: "Secondary",
+    
+    // Method to calculate the school's age
+    calculateSchoolAge: function() {
+      let currentYear = new Date().getFullYear();  // Get the current year
+      return currentYear - this.establishedYear;
+    }
+  };
+  
+  // Calculate and print the school's age
+  let schoolAge = school.calculateSchoolAge();
+  console.log("The school is " + schoolAge + " years old.");
+  
