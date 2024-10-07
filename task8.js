@@ -1,23 +1,23 @@
-// Create the school object
-let school = {
-    name: "seeta high school",
-    location: "kampala, uganda",
-    studentsCount: 1300,
-    establishedYear: 2000,
-    schoolType: "Secondary",
+// Global variable representing the national population of Uganda
+//nationalpopulation
+let nationalPopulation = 45000000; 
+
+// Function to calculate population growth
+function calculatePopulationGrowth(growthRate) {
+    // Local variable for the number of years to calculate growth
+    let years = 5;
+
+    // Calculate the projected population after a certain number of years
+    let projectedPopulation = nationalPopulation * Math.pow(1 + growthRate, years);
     
-    // Method to calculate the school's age
-    calculateSchoolAge: function() {
-      let currentYear = new Date().getFullYear();
-      return currentYear - this.establishedYear;
-    }
-  };
-  
-  // Destructure the school object to extract name, location, and studentsCount
-  let { name, location, studentsCount } = school;
-  
-  // Log the destructured variables
-  console.log("School Name:", name);
-  console.log("School Location:", location);
-  console.log("Number of Students:", studentsCount);
-  
+    // Print the results
+    console.log(`Current National Population: ${nationalPopulation}`);
+    console.log(`Projected Population after ${years} years at a growth rate of ${growthRate * 100}%: ${Math.round(projectedPopulation)}`);
+}
+
+ // 3% annual growth rate
+let annualGrowthRate = 0.03; 
+calculatePopulationGrowth(annualGrowthRate);
+
+// Show the effect of the function on the global variable
+console.log(`The national population remains unchanged: ${nationalPopulation}`);

@@ -1,23 +1,15 @@
-// Create the school object
-let school = {
-    name: "seeta high school",
-    location: "kampala, uganda",
-    studentsCount: 1300,
-    establishedYear: 2000,
-    schoolType: "Secondary",
-  
-    // Method to calculate the school's age
-    calculateSchoolAge: function() {
-      let currentYear = new Date().getFullYear();
-      return currentYear - this.establishedYear;
-    },
-  
-    // Method to introduce the school
-    schoolIntroduction: function() {
-      return `Welcome to ${this.name}, located in ${this.location}. We have ${this.studentsCount} students enrolled.`;
-    }
-  };
-  
-  // Log the school introduction
-  console.log(school.schoolIntroduction());
-  
+// Function to calculate total internet cost with a default value for data bundle
+function calculateInternetCost(numberOfBundles, costPerBundle = 50000) {
+    // Calculate total cost
+    return numberOfBundles * costPerBundle;
+}
+
+// value for the number of bundles
+
+let bundlesNeeded = 3; 
+
+// Calculate the total internet cost
+let totalCost = calculateInternetCost(bundlesNeeded);
+
+// Output the result
+console.log(`Total cost for ${bundlesNeeded} data bundles is UGX ${totalCost}.`);

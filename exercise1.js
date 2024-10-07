@@ -1,18 +1,28 @@
-let bodaBodaRider = {
-    name: "jamesspeeedriders",
-    location: "Kampala",
-    bodaType: "Motorcycle",
+// Function to calculate the total electricity bill
+function calculateElectricityBill(unitsConsumed) {
+    let ratePerUnit;
     
-    // Method to calculate income for a day
-    calculateIncome: function(distanceTraveled, farePerKilometer) {
-      return distanceTraveled * farePerKilometer;
+    // Define rates based on consumption levels
+    if (unitsConsumed <= 100) {
+        // Rate for first 100 units
+        ratePerUnit = 250; 
+    } else if (unitsConsumed <= 300) {
+        // Rate for units 101 to 300
+        ratePerUnit = 350; 
+    } else {
+        // Rate for units above 300
+        ratePerUnit = 500; 
     }
-  };
-  
-  // Example usage: calculating income for a day
-  let distanceTraveled = 30; // kilometers
-  let farePerKilometer = 5000; // UGX
-  
-  // Log the rider's income for the day
-  console.log(`Rider's Income for the Day: UGX ${bodaBodaRider.calculateIncome(distanceTraveled, farePerKilometer)}`);
-  
+    
+    // Calculate total bill
+    let totalBill = unitsConsumed * ratePerUnit;
+    
+    return totalBill;
+}
+
+// number of units consumed
+let unitsConsumed = 250; 
+let totalElectricityBill = calculateElectricityBill(unitsConsumed);
+
+// Output the result
+console.log(`Total electricity bill for ${unitsConsumed} units is UGX ${totalElectricityBill}.`);

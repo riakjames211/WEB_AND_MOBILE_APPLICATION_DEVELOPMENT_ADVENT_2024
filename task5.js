@@ -1,23 +1,21 @@
-// Create the school object
-let school = {
-    name: "seeta high school",
-    location: "kampala, uganda",
-    studentsCount: 1300,
-    establishedYear: 2000,
-    schoolType: "Secondary",
-    
-    // Method to calculate the school's age
-    calculateSchoolAge: function() {
-      let currentYear = new Date().getFullYear();  // Get the current year
-      return currentYear - this.establishedYear;
-    }
-  };
-  
-  // Loop through all properties of the school object and log them
-  for (let property in school) {
-    // Check if the property is a function before logging
-    if (typeof school[property] !== 'function') {
-      console.log(`${property}: ${school[property]}`);
-    }
-  }
-  
+// Function to calculate profit
+function calculateProfit(sellingPrice, costPrice, numberOfUnitsSold) {
+    // Calculate profit per unit
+    let profitPerUnit = sellingPrice - costPrice;
+    // Calculate total profit
+    return profitPerUnit * numberOfUnitsSold;
+}
+
+// to get proft values
+// Selling price per unit in UGX
+let sellingPrice = 20000; 
+// Cost price per unit in UGX
+let costPrice = 15000; 
+// Number of units sold
+let numberOfUnitsSold = 50; 
+
+// Calculate the total profit
+let totalProfit = calculateProfit(sellingPrice, costPrice, numberOfUnitsSold);
+
+// Output the result
+console.log(`Total profit from selling maize flour is UGX ${totalProfit}`);
